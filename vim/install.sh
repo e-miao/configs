@@ -9,4 +9,6 @@ git clone https://github.com/sonph/onehalf.git ~/tmp/onehalf
 
 cd ~/tmp/onehalf && cp -r vim/autoload ~/.vim/ && cp -r vim/colors ~/.vim/
 
+rm -rf ~/tmp/*
+
 vim +PluginInstall +qall
