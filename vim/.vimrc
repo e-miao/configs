@@ -21,7 +21,7 @@ Plugin 'tpope/vim-fugitive'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
+" Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -36,6 +36,9 @@ Plugin 'sonph/onehalf', { 'rtp': 'vim' }
 " https://github.com/itchyny/lightline.vim
 Plugin 'itchyny/lightline.vim'
 
+
+" 左侧目录栏 插件
+Plugin 'preservim/nerdtree'
 " =============end 自定义插件===================
 
 
@@ -50,8 +53,7 @@ filetype plugin indent on    " required
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+" " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
 syntax on
@@ -73,6 +75,8 @@ endif
 if !has('gui_running')
   set t_Co=256
 endif
+
+" 总是显示状态行
 set laststatus=2
 
 
@@ -108,3 +112,20 @@ set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 "语言设置
 set langmenu=zh_CN.UTF-8
 set helplang=cn
+
+
+" 通过使用: commands命令，告诉我们文件的哪一行被改变过
+set report=0
+" 在被分割的窗口间显示空白，便于阅读
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+" 高亮显示匹配的括号
+set showmatch
+
+" 将leader键设置为,
+let mapleader=','
+let g:mapleader=','
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>m :NERDTree<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
