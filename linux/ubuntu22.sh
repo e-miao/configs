@@ -17,13 +17,13 @@ function theme_install(){
     tar -xf ~/tmp/nordic.tar.xz -C ~/.themes/
 
     git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git ~/tmp/WhiteSur-gtk-theme
-    cd ~/tmp/WhiteSur-gtk-theme && sh install.sh
+    cd ~/tmp/WhiteSur-gtk-theme && bash install.sh
 
     git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git ~/tmp/WhiteSur-icon-theme
-    cd ~/tmp/WhiteSur-icon-theme && sh install.sh
+    cd ~/tmp/WhiteSur-icon-theme && bash install.sh
 
     git clone https://github.com/vinceliuice/Qogir-theme.git ~/tmp/Qogir-theme
-    cd ~/tmp/Qogir-theme && sudo sh install.sh
+    cd ~/tmp/Qogir-theme && sudo bash install.sh
     
     gsettings set org.gnome.desktop.interface gtk-theme "Nordic Dark"
     gsettings set org.gnome.desktop.interface gtk-theme "Qogir"
