@@ -40,10 +40,10 @@ function fonts_ohmyzsh_install(){
     tar -zxvf SourceCodePro.tar.gz -C ~/.fonts/
 
     mkdir -p ~/.fonts/MesloLGS_NF
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O "~/.fonts/MesloLGS_NF/MesloLGS NF Italic.ttf"
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -O "~/.fonts/MesloLGS_NF/MesloLGS NF Bold.ttf"
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O "~/.fonts/MesloLGS_NF/MesloLGS NF Bold Italic.ttf"
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O "~/.fonts/MesloLGS_NF/MesloLGS NF Regular.ttf"
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -P ~/.fonts/MesloLGS_NF/  
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P ~/.fonts/MesloLGS_NF/  
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/.fonts/MesloLGS_NF/  
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P ~/.fonts/MesloLGS_NF/
 
     fc-cache -fv
     
@@ -53,7 +53,7 @@ function fonts_ohmyzsh_install(){
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
+    sed -i  "s#ZSH_THEME=\"robbyrussell\"#ZSH_THEME=\"powerlevel10k/powerlevel10k\"#g" ~/.zshrc
 }
 
 
