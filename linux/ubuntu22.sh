@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+
+base_path=`pwd`
 function base_soft(){
     sudo apt update 
     sudo apt install git curl wget zsh vim -y 
@@ -34,6 +36,7 @@ function theme_install(){
 
 function fonts_ohmyzsh_install(){
     mkdir -p ~/.fonts
+    cd $base_path
     unzip Source_Code_Pro.zip -d ~/.fonts/
 
     mkdir -p ~/.fonts/MesloLGS_NF
