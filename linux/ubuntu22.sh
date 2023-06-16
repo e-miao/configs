@@ -46,6 +46,7 @@ function fonts_ohmyzsh_install(){
     wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O "~/.fonts/MesloLGS_NF/MesloLGS NF Bold Italic.ttf"
     wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O "~/.fonts/MesloLGS_NF/MesloLGS NF Regular.ttf"
 
+    fc-cache -fv
     
     # install p10k
     sudo apt install zsh -y
