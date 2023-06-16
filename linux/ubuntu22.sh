@@ -37,10 +37,9 @@ function theme_install(){
 function fonts_ohmyzsh_install(){
     mkdir -p ~/.fonts
     cd $base_path
-    unzip Source_Code_Pro.zip -d ~/.fonts/
+    tar -zxvf SourceCodePro.tar.gz -C ~/.fonts/
 
     mkdir -p ~/.fonts/MesloLGS_NF
-
     wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O "~/.fonts/MesloLGS_NF/MesloLGS NF Italic.ttf"
     wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -O "~/.fonts/MesloLGS_NF/MesloLGS NF Bold.ttf"
     wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O "~/.fonts/MesloLGS_NF/MesloLGS NF Bold Italic.ttf"
